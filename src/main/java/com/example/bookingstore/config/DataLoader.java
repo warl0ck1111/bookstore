@@ -7,7 +7,6 @@ import com.example.bookingstore.enums.Genre;
 import com.example.bookingstore.repository.AuthorRepository;
 import com.example.bookingstore.repository.BookRepository;
 import com.example.bookingstore.repository.UserRepository;
-import com.example.bookingstore.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -23,7 +22,6 @@ public class DataLoader implements CommandLineRunner {
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
     private final UserRepository userRepository;
-    private UserService userService;
 
 
     @Override
@@ -50,5 +48,12 @@ public class DataLoader implements CommandLineRunner {
             log.info("Preloaded 10 books into the database.");
         }
 
+//        if (userRepository.count() < 1) {
+//            List<User> users = List.of(
+//            userRepository.save(new User("Ironman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu")),
+//            userRepository.save(new User("Superman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu")),
+//            userRepository.save(new User("Lukman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu")));
+//            userRepository.saveAll(users);
+//        }
     }
 }

@@ -59,9 +59,4 @@ public class User implements UserDetails {
         this.username = username;
         this.id = id;
     }
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
 }

@@ -26,9 +26,7 @@ public class SecurityConfiguration {
                 .headers().frameOptions().disable()
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers(
-                        "/api/v1/users/**",
-                        "/h2-console/**")
+                .requestMatchers("**")
                 .permitAll()
                 .and()
                 .authenticationProvider(authenticationProvider);
