@@ -1,13 +1,12 @@
 package com.example.bookingstore.controller;
 
 
-import com.example.bookingstore.dto.AuthenticationResponse;
-import com.example.bookingstore.dto.CreateUserRequest;
-import com.example.bookingstore.dto.LoginRequest;
+import com.example.bookingstore.dto.responses.AuthenticationResponse;
+import com.example.bookingstore.dto.request.CreateUserRequest;
+import com.example.bookingstore.dto.request.LoginRequest;
 import com.example.bookingstore.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

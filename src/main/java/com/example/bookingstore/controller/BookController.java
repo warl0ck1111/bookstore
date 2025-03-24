@@ -1,8 +1,8 @@
 package com.example.bookingstore.controller;
 
 
-import com.example.bookingstore.dto.BookRequestDto;
-import com.example.bookingstore.dto.BookResponseDto;
+import com.example.bookingstore.dto.request.BookRequestDto;
+import com.example.bookingstore.dto.responses.BookResponseDto;
 import com.example.bookingstore.service.BookService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,7 @@
 package com.example.bookingstore.service;
 
-import com.example.bookingstore.dto.BookRequestDto;
-import com.example.bookingstore.dto.BookResponseDto;
-import com.example.bookingstore.entity.Author;
+import com.example.bookingstore.dto.request.BookRequestDto;
+import com.example.bookingstore.dto.responses.BookResponseDto;
 import com.example.bookingstore.entity.Book;
 import com.example.bookingstore.enums.Genre;
 import com.example.bookingstore.exceptions.BookServiceException;
@@ -17,9 +16,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Objects;
 
 @Slf4j
 @Service

@@ -1,6 +1,6 @@
 package com.example.bookingstore.service;
 
-import com.example.bookingstore.dto.AuthorDto;
+import com.example.bookingstore.dto.request.AuthorDto;
 import com.example.bookingstore.entity.Author;
 import com.example.bookingstore.exceptions.ResourceNotFoundException;
 import com.example.bookingstore.repository.AuthorRepository;

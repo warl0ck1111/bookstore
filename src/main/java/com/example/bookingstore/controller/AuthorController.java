@@ -1,7 +1,7 @@
 package com.example.bookingstore.controller;
 
 
-import com.example.bookingstore.dto.AuthorDto;
+import com.example.bookingstore.dto.request.AuthorDto;
 import com.example.bookingstore.entity.Author;
 import com.example.bookingstore.service.AuthorService;
 import jakarta.validation.Valid;

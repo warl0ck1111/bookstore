@@ -1,6 +1,6 @@
 package com.example.bookingstore.service;
 
-import com.example.bookingstore.dto.AuthorDto;
+import com.example.bookingstore.dto.request.AuthorDto;
 import com.example.bookingstore.entity.Author;
 
 public interface AuthorService {

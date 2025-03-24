@@ -1,7 +1,6 @@
 package com.example.bookingstore.repository;
 
-import com.example.bookingstore.dto.BookResponseDto;
-import com.example.bookingstore.entity.Author;
+import com.example.bookingstore.dto.responses.BookResponseDto;
 import com.example.bookingstore.entity.Book;
 import com.example.bookingstore.enums.Genre;
 import org.springframework.data.domain.Page;
@@ -20,7 +19,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     Optional<Book> findByIdAndDeletedFalse(@Param("bookId") Long bookId);
 
     @Query(value = """
-        SELECT new com.example.bookingstore.dto.BookResponseDto(b.id, b.title, b.genre,b.isbn,b.author.id, b.yearOfPublication, b.price, b.stock) from Book b where b.deleted = false
+        SELECT new com.example.bookingstore.dto.responses.BookResponseDto(b.id, b.title, b.genre,b.isbn,b.author.id, b.yearOfPublication, b.price, b.stock) from Book b where b.deleted = false
     """)
     Page<BookResponseDto> findAllBooks(Pageable pageable);
 
@@ -29,7 +28,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     void updateBookPrice(@Param("id") Long id, @Param("price") Double price);
 
     @Query("""
-        SELECT new com.example.bookingstore.dto.BookResponseDto(b.id, b.title, b.genre,b.isbn,b.author.id, b.yearOfPublication,b.price, b.stock)  FROM Book b
+        SELECT new com.example.bookingstore.dto.responses.BookResponseDto(b.id, b.title, b.genre,b.isbn,b.author.id, b.yearOfPublication,b.price, b.stock)  FROM Book b
         WHERE b.deleted = false
         AND (
             LOWER(b.title) LIKE LOWER(CONCAT('%', :keyword, '%'))

@@ -1,6 +1,6 @@
 package com.example.bookingstore.service;
 
-import com.example.bookingstore.dto.OrderResponse;
+import com.example.bookingstore.dto.responses.OrderResponse;
 import com.example.bookingstore.entity.*;
 import com.example.bookingstore.enums.OrderStatus;
 import com.example.bookingstore.enums.PaymentMethod;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.Set;
-import java.util.stream.Collectors;
+
 
 @Slf4j
 @Service

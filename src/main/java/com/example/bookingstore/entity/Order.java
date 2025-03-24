@@ -1,8 +1,6 @@
 package com.example.bookingstore.entity;
 
 import com.example.bookingstore.enums.OrderStatus;
-import com.example.bookingstore.enums.PaymentMethod;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

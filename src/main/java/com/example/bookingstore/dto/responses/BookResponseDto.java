@@ -1,4 +1,4 @@
-package com.example.bookingstore.dto;
+package com.example.bookingstore.dto.responses;
 
 import com.example.bookingstore.enums.Genre;
 

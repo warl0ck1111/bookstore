@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    @Query("select (count(u.username) > 0) from User u where u.username = :username")
+    @Query("select (count(u.username) > 0) from User u where lower( u.username) = lower(:username)")
     boolean existsByUsernameIgnoreCase(@Param("username") String username);
 
     @Query("select new User(u.id, u.username) from User u where LOWER(u.username) LIKE LOWER(CONCAT('%', :username, '%'))")

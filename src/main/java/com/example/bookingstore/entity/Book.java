@@ -1,7 +1,6 @@
 package com.example.bookingstore.entity;
 
 import com.example.bookingstore.enums.Genre;
-import com.example.bookingstore.exceptions.InsufficientStockException;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;

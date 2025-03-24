@@ -2,13 +2,14 @@ package com.example.bookingstore.transaction;
 
 
 import com.example.bookingstore.dto.responses.ApiSuccessResponse;
-import com.example.bookingstore.transaction.models.Transaction;
 import com.example.bookingstore.transaction.models.TransactionResponse;
 import com.example.bookingstore.transaction.models.VerifyTransactionResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/transactions")
@@ -25,8 +26,8 @@ public class TransactionController {
 
 
     @GetMapping("")
-    public ResponseEntity<ApiSuccessResponse> getTransactionHistory(@RequestParam String userId) {
-        TransactionResponse transactionResponse = transactionService.getTransactionDetails(userId);
+    public ResponseEntity<ApiSuccessResponse> getTransactionHistory(@RequestParam Long userId) {
+        List<TransactionResponse> transactionResponse = transactionService.getPurchaseHistory(userId);
         return ResponseEntity.ok(new ApiSuccessResponse(transactionResponse,""));
     }
 }

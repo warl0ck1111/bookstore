@@ -3,6 +3,7 @@ package com.example.bookingstore.config;
 
 import com.example.bookingstore.entity.Author;
 import com.example.bookingstore.entity.Book;
+import com.example.bookingstore.entity.User;
 import com.example.bookingstore.enums.Genre;
 import com.example.bookingstore.repository.AuthorRepository;
 import com.example.bookingstore.repository.BookRepository;
@@ -48,12 +49,13 @@ public class DataLoader implements CommandLineRunner {
             log.info("Preloaded 10 books into the database.");
         }
 
-//        if (userRepository.count() < 1) {
-//            List<User> users = List.of(
-//            userRepository.save(new User("Ironman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu")),
-//            userRepository.save(new User("Superman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu")),
-//            userRepository.save(new User("Lukman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu")));
-//            userRepository.saveAll(users);
-//        }
+        if (userRepository.count() < 4) {
+            List<User> users = List.of(
+                    new User("Ironman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu"),
+                    new User("Superman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu"),
+                    new User("Lukman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu"),
+                    new User("Suleman", "$2a$10$3Ket22UJh4Msv3qjynPyne3PFTWbvYLIR9Ca27MPEarCA9.qi.pWu"));
+            userRepository.saveAll(users);
+        }
     }
 }

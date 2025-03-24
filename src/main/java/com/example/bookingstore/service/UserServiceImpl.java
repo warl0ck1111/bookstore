@@ -1,9 +1,9 @@
 package com.example.bookingstore.service;
 
 import com.example.bookingstore.config.JwtService;
-import com.example.bookingstore.dto.AuthenticationResponse;
-import com.example.bookingstore.dto.CreateUserRequest;
-import com.example.bookingstore.dto.LoginRequest;
+import com.example.bookingstore.dto.responses.AuthenticationResponse;
+import com.example.bookingstore.dto.request.CreateUserRequest;
+import com.example.bookingstore.dto.request.LoginRequest;
 import com.example.bookingstore.entity.User;
 import com.example.bookingstore.exceptions.AppUserServiceException;
 import com.example.bookingstore.exceptions.UserServiceException;

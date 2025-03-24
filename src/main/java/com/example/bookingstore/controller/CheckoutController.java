@@ -1,8 +1,7 @@
 package com.example.bookingstore.controller;
 
-import com.example.bookingstore.dto.OrderResponse;
+import com.example.bookingstore.dto.responses.OrderResponse;
 import com.example.bookingstore.dto.responses.ApiSuccessResponse;
-import com.example.bookingstore.entity.Order;
 import com.example.bookingstore.enums.PaymentMethod;
 import com.example.bookingstore.service.CheckoutService;
 import com.example.bookingstore.transaction.models.PaymentChannel;
@@ -21,4 +20,5 @@ public class CheckoutController {
         OrderResponse order = checkoutService.checkout(userId, paymentMethod, paymentChannel);
         return ResponseEntity.ok(new ApiSuccessResponse(order,""));
     }
+
 }

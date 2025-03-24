@@ -1,6 +1,6 @@
 package com.example.bookingstore.mapper;
 
-import com.example.bookingstore.dto.BookResponseDto;
+import com.example.bookingstore.dto.responses.BookResponseDto;
 import com.example.bookingstore.entity.Book;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

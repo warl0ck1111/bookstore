@@ -1,6 +1,5 @@
 package com.example.bookingstore.dto.responses;
 
-import com.example.bookingstore.dto.BookResponseDto;
 import lombok.Data;
 
 @Data

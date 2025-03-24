@@ -1,7 +1,7 @@
 package com.example.bookingstore.service;
 
 
-import com.example.bookingstore.dto.BookResponseDto;
+import com.example.bookingstore.dto.responses.BookResponseDto;
 import com.example.bookingstore.dto.responses.BookDetail;
 import com.example.bookingstore.dto.responses.CartItemProjection;
 import com.example.bookingstore.dto.responses.CartItemsResponse;

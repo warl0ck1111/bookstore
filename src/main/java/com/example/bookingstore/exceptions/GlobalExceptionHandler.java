@@ -75,7 +75,7 @@ public class GlobalExceptionHandler {
         log.error("handleMethodArgumentNotValidException/e :", e);
         List<String> errorList = new ArrayList<>();
         e.getAllErrors().forEach(objectError -> errorList.add(objectError.getDefaultMessage()));
-        return new ResponseEntity<>(new ApiFailedResponse(errorList.get(0)), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new ApiFailedResponse(errorList.getFirst()), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(BookServiceException.class)
