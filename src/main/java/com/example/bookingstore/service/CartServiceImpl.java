@@ -10,7 +10,6 @@ import com.example.bookingstore.entity.Cart;
 import com.example.bookingstore.entity.User;
 import com.example.bookingstore.exceptions.CartServiceException;
 import com.example.bookingstore.exceptions.ResourceNotFoundException;
-import com.example.bookingstore.mapper.CartItemMapper;
 import com.example.bookingstore.repository.BookRepository;
 import com.example.bookingstore.repository.CartRepository;
 import com.example.bookingstore.repository.UserRepository;
@@ -33,7 +32,6 @@ public class CartServiceImpl implements CartService {
     private final BookRepository bookRepository;
     private final CartItemRepository cartItemRepository;
     private final UserRepository userRepository;
-    private CartItemMapper cartItemMapper;
 
     @Override
     public Cart getCartByUserId(Long userId) {
