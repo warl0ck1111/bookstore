@@ -20,9 +20,9 @@ public class CartController {
     }
 
     @PutMapping("/{userId}/remove/{bookId}/{quantity}")
-    public ResponseEntity<ApiSuccessResponse> removeBookFromCart(@PathVariable Long userId, @PathVariable Long bookId, @PathVariable int quantity) {
+    public ResponseEntity<Void> removeBookFromCart(@PathVariable Long userId, @PathVariable Long bookId, @PathVariable int quantity) {
         cartService.removeBookFromCart(userId, bookId, quantity);
-        return ResponseEntity.ok(new ApiSuccessResponse("Book quantity updated."));
+        return ResponseEntity.noContent().build();
     }
 
 
@@ -34,9 +34,9 @@ public class CartController {
     }
 
     @DeleteMapping("/{userId}")
-    public ResponseEntity<ApiSuccessResponse> clearCart(@PathVariable Long userId) {
+    public ResponseEntity<Void> clearCart(@PathVariable Long userId) {
         cartService.clearCart(userId);
-        return ResponseEntity.ok(new ApiSuccessResponse("cart cleared successfully."));
+        return ResponseEntity.noContent().build();
     }
 
 

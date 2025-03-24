@@ -8,6 +8,7 @@ import com.example.bookingstore.dto.responses.CartItemsResponse;
 import com.example.bookingstore.entity.Book;
 import com.example.bookingstore.entity.Cart;
 import com.example.bookingstore.entity.User;
+import com.example.bookingstore.exceptions.AppUserServiceException;
 import com.example.bookingstore.exceptions.CartServiceException;
 import com.example.bookingstore.exceptions.ResourceNotFoundException;
 import com.example.bookingstore.repository.BookRepository;
@@ -38,7 +39,7 @@ public class CartServiceImpl implements CartService {
         return cartRepository.findByUserId(userId)
                 .orElseGet(() -> {
                     Cart newCart = new Cart();
-                    User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User " + userId + " not found"));
+                    User user = userRepository.findById(userId).orElseThrow(() -> new AppUserServiceException("User " + userId + " not found"));
                     newCart.setUser(user);
                     return cartRepository.save(newCart);
                 });

@@ -61,7 +61,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
             // Check stock availability
             if (book.getStock() < quantity) {
-                throw new InsufficientStockException("Not enough stock for book: " + book.getTitle() + " with id"+book.getId()+ ". Requested " + cartItem.getQuantity() + " but only got " + book.getStock() + " left in stock");
+                throw new InsufficientStockException("Not enough stock for book: " + book.getTitle() + " with id "+book.getId()+ ". Requested " + cartItem.getQuantity() + " but only got " + book.getStock() + " left in stock");
             }
 
             // Deduct stock
@@ -97,12 +97,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         orderRepository.save(savedOrder);
 
         // Clear cart
-        log.info("checkout/Clearing cart");
-        for (CartItem cartItem : cartItems) {
-            log.info("deleteing cartItem:{}", cartItem.getId());
-            cartItemRepository.deleteById(cartItem.getId());
-        }
-//        cartItemRepository.deleteAllById(cartItems.stream().map(CartItem::getId).collect(Collectors.toSet()));
+        cartItemRepository.deleteByCart(cart);
 
         return new OrderResponse(order.getId(),savedOrder.getUser().getId(),totalPrice, savedOrder.getStatus());
     }
